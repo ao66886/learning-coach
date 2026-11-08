@@ -1,0 +1,23 @@
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- editors ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- temp / build ---
+*.tmp
+*.bak
+*.log
+node_modules/
+dist/
+build/
+
+# --- 个人草稿（不要提交自己的学习记录）---
+drafts/
+private/
+*.local.md

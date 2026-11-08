@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>康奈尔左栏卡 · 空白模板</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background:#eceae4;
+    padding:28px 20px 40px;
+    display:flex; flex-wrap:wrap; gap:22px; justify-content:center;
+    -webkit-font-smoothing:antialiased;
+  }
+  .card {
+    width:292px;
+    background:#fdfcf9;
+    border:1px solid #cfc9bd;
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  .hd {
+    background:#2f3a45; color:#fff;
+    padding:9px 12px 8px;
+    font-size:13.5px; font-weight:600; letter-spacing:.6px;
+  }
+  .hd small { display:block; font-weight:400; font-size:10.5px; opacity:.62; margin-top:2px; letter-spacing:.3px; }
+  .bd { padding:13px 12px 11px; }
+  .lbl {
+    font-size:10px; color:#8d867a; letter-spacing:1.2px;
+    margin-bottom:6px; border-bottom:1px dotted #dcd6c9; padding-bottom:3px;
+  }
+  .row {
+    font-size:14px; line-height:1.95; color:#2a2a28;
+    display:flex; gap:6px; align-items:baseline;
+  }
+  .row .k { flex:0 0 auto; font-size:12px; font-weight:700; width:14px; text-align:center; }
+  .row .txt { flex:1; }
+  .blank { color:#b3ada1; letter-spacing:2px; }
+  .tagk {
+    flex:0 0 auto; font-size:9px; color:#2f6f8f;
+    background:#eaf1f5; padding:1px 4px; border-radius:2px;
+    letter-spacing:.2px; white-space:nowrap;
+  }
+  .star { color:#b4453a; }
+  .skip { color:#a3a09a; }
+  .prod { color:#2f6f8f; }
+  .chain{ color:#6b7a4a; }
+  .dim  { color:#767066; }
+  .rule { height:1px; background:#e4ded1; margin:9px 0; }
+  .ft {
+    border-top:1px solid #d8d2c5; padding:8px 12px 9px;
+    font-size:10.5px; line-height:1.75; color:#7c7669; background:#f7f5f0;
+  }
+  .ft b { color:#b4453a; font-weight:700; }
+  /* 规则卡 */
+  .opt { font-size:11.5px; line-height:2.05; color:#3a3a36; }
+  .opt b { color:#2f3a45; }
+  .opt .no { color:#b4453a; font-weight:700; }
+  .opt .yes { color:#4a7a52; font-weight:700; }
+  @media print { body { background:#fff; padding:0; gap:10px; } .card { box-shadow:none; } }
+</style>
+</head>
+<body>
+
+<!-- ============ 卡 1：空白模板 ============ -->
+<div class="card">
+  <div class="hd">本讲标题
+    <small>第 __ 讲 ｜ 考点课 / 支撑课 ｜ 遮住右边自测</small>
+  </div>
+  <div class="bd">
+
+    <div class="lbl">因果链 · 边听边填</div>
+    <div class="row"><span class="k chain">①</span><span class="txt blank">＿＿＿＿</span><span class="tagk">考在哪</span></div>
+    <div class="row"><span class="k chain">②</span><span class="txt blank">＿＿＿＿</span><span class="tagk">考在哪</span></div>
+    <div class="row"><span class="k chain">③</span><span class="txt blank">＿＿＿＿</span><span class="tagk">考在哪</span></div>
+
+    <div class="rule"></div>
+    <div class="lbl">必答 · 答不出＝没过</div>
+    <div class="row"><span class="k star">★</span><span class="txt blank">＿＿＿＿？</span><span class="tagk">考在哪</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt blank">＿＿＿＿？</span><span class="tagk">考在哪</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt blank">＿＿＿＿？</span><span class="tagk">考在哪</span></div>
+
+    <div class="rule"></div>
+    <div class="lbl">卡住 / 跳过</div>
+    <div class="row"><span class="k skip">?</span><span class="txt dim blank">预判会卡的</span><span class="tagk">别纠缠</span></div>
+    <div class="row"><span class="k skip">⊘</span><span class="txt dim blank">本讲不看</span><span class="tagk">敢快进</span></div>
+
+    <div class="rule"></div>
+    <div class="lbl">产出 · 闭卷必修</div>
+    <div class="row"><span class="k prod">▣</span><span class="txt blank">＿＿＿＿</span></div>
+    <div class="row"><span class="k prod">▣</span><span class="txt blank">＿＿＿＿</span></div>
+
+  </div>
+  <div class="ft">判定：<b>__ 个 ★ 全答出</b> ＝ 这课过了<br>
+    答不出 → 重推那一环，<span class="tagk">不要重听整集</span></div>
+</div>
+
+<!-- ============ 卡 2：填写规则 ============ -->
+<div class="card">
+  <div class="hd">填写规则
+    <small>五条，少一条这张卡就废了</small>
+  </div>
+  <div class="bd">
+    <div class="opt">
+      <b>1. 只写提问，不写答案</b><br>
+      <span class="yes">写</span>「E 从哪指向哪？为什么」<br>
+      <span class="no">不写</span>「内建电场从 N 指向 P」<br>
+      <span class="dim">左栏是自测栏，写了答案它就成了第二份笔记。</span>
+      <div class="rule"></div>
+
+      <b>2. 5–7 行封顶</b><br>
+      每行 ≤10–12 字，一个线索一行。<br>
+      <span class="dim">塞满了等于没有。超 5 行就删，删不掉说明还没判断出哪个最关键。</span>
+      <div class="rule"></div>
+
+      <b>3. 每行标「考在哪」</b><br>
+      哪个题型、哪道题。标不出去的 → <span class="no">直接删</span>。<br>
+      <span class="dim">不考的点即使很重要，也不占左栏。</span>
+      <div class="rule"></div>
+
+      <b>4. 四组固定，顺序不变</b><br>
+      <span class="chain">①②③ 因果链</span> ／ <span class="star">★ 必答</span> ／
+      <span class="skip">? 卡住 ⊘ 跳过</span> ／ <span class="prod">▣ 产出</span>
+      <div class="rule"></div>
+
+      <b>5. 底部写唯一判定标准</b><br>
+      「__ 个 ★ 全答出＝这课过了」。<br>
+      <span class="dim">没有判定线，这张卡就只是装饰。</span>
+    </div>
+  </div>
+  <div class="ft">用法：听完<span class="tagk">盖住右边</span>只看左栏；<br>
+    答得出 → 下一课 ｜ 答不出 → 重推那一环</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>康奈尔左栏卡 · 03–05 课</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background:#eceae4;
+    padding:26px 18px 40px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:flex-start;max-width:1000px;margin:0 auto;}
+  .card {
+    width:296px;
+    background:#fdfcf9;
+    border:1px solid #cfc9bd;
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  .hd {
+    background:#2f3a45; color:#fff;
+    padding:9px 12px 8px;
+    font-size:13.5px; font-weight:600; letter-spacing:.4px;
+  }
+  .hd.core{background:#7a3b32;}
+  .hd small { display:block; font-weight:400; font-size:10.5px; opacity:.72; margin-top:2px; letter-spacing:.2px; }
+  .bd { padding:13px 12px 11px; }
+  .lbl {
+    font-size:10px; color:#8d867a; letter-spacing:1.2px;
+    margin-bottom:6px; border-bottom:1px dotted #dcd6c9; padding-bottom:3px;
+  }
+  .row {
+    font-size:13.5px; line-height:1.9; color:#2a2a28;
+    display:flex; gap:6px; align-items:baseline;
+  }
+  .row .k { flex:0 0 auto; font-size:12px; font-weight:700; width:14px; text-align:center; }
+  .row .txt { flex:1; }
+  .row .tagk {
+    flex:0 0 auto; font-size:8.5px; color:#2f6f8f;
+    background:#eaf1f5; padding:1px 4px; border-radius:2px;
+    letter-spacing:0; white-space:nowrap;
+  }
+  .star { color:#b4453a; }
+  .skip { color:#a3a09a; }
+  .prod { color:#2f6f8f; }
+  .chain{ color:#6b7a4a; }
+  .dim  { color:#767066; }
+  .rule { height:1px; background:#e4ded1; margin:8px 0; }
+  .ft {
+    border-top:1px solid #d8d2c5; padding:8px 12px 9px;
+    font-size:10.5px; line-height:1.7; color:#7c7669; background:#f7f5f0;
+  }
+  .ft b { color:#b4453a; font-weight:700; }
+  .ft .q { color:#2f6f8f; font-weight:600; }
+  .warn{font-size:10px;color:#a06a2c;background:#fdf6e9;border-top:1px solid #e8dcc6;padding:6px 12px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ================= 03 ================= -->
+<div class="card">
+  <div class="hd">03 PN 与二极管的特性
+    <small>41:34 ｜ 基础课 ｜ 管判通断的前提</small>
+  </div>
+  <div class="bd">
+
+    <div class="lbl">曲线主干 · 边听边画</div>
+    <div class="row"><span class="k chain">①</span><span class="txt">三段：正偏 / 反偏 / 击穿</span></div>
+
+    <div class="rule"></div>
+
+    <div class="lbl">核心 4 问</div>
+    <div class="row"><span class="k star">★</span><span class="txt">正向超多少才通</span><span class="tagk">判通断</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">反向通不通？例外</span><span class="tagk">稳压管</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">击穿后电压怎样</span><span class="tagk">稳压原理</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">反偏电流随温如何</span><span class="tagk">Q点漂移</span></div>
+
+    <div class="rule"></div>
+
+    <div class="row"><span class="k skip">⊘</span><span class="txt dim">工艺·主要参数·封装</span><span class="tagk">不考</span></div>
+    <div class="row"><span class="k prod">▣</span><span class="txt">闭卷画伏安特性</span></div>
+
+  </div>
+  <div class="warn">主要参数（I_F、U_RM）留给第 11 章整流选管，本课不看。</div>
+  <div class="ft">
+    <b>4 个 ★ 全答出＝过关。</b>对应 <span class="q">3-5、3-6</span>（判通断）
+  </div>
+</div>
+
+<!-- ================= 04 ================= -->
+<div class="card">
+  <div class="hd">04 二极管的直流等效电路
+    <small>45:44 ｜ ★核心考点课 ｜ 第3章的地基</small>
+  </div>
+  <div class="bd">
+
+    <div class="lbl">模型主干 · 边听边画</div>
+    <div class="row"><span class="k chain">①</span><span class="txt">理想 → 恒压降 → 折线</span></div>
+
+    <div class="rule"></div>
+
+    <div class="lbl">核心 4 问</div>
+    <div class="row"><span class="k star">★</span><span class="txt">三种各忽略什么</span><span class="tagk">选模型</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">理想 vs 恒压降 差多少</span><span class="tagk">3-1、3-3</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">折线的斜率是谁</span><span class="tagk">接 05 的 r_d</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">负载线怎么画</span><span class="tagk">接第4章图解</span></div>
+
+    <div class="rule"></div>
+
+    <div class="row"><span class="k skip">⊘</span><span class="txt dim">温度对模型的影响</span><span class="tagk">不用</span></div>
+    <div class="row"><span class="k prod">▣</span><span class="txt">三模型画同一坐标系</span></div>
+
+  </div>
+  <div class="warn">这一集是全章地基：后面所有题第一步都要"把二极管换成什么"。</div>
+  <div class="ft">
+    <b>4 个 ★ 全答出＝过关。</b>对应 <span class="q">3-1、3-3、3-4、3-7</span>
+  </div>
+</div>
+
+<!-- ================= 05 ================= -->
+<div class="card">
+  <div class="hd core">05 微变等效 和 稳压二极管
+    <small>43:53 ｜ ★★主得分区 ｜ 管住 4 道题</small>
+  </div>
+  <div class="bd">
+
+    <div class="lbl">两条主干</div>
+    <div class="row"><span class="k chain">①</span><span class="txt">Q点切线 → r_d</span></div>
+    <div class="row"><span class="k chain">②</span><span class="txt">反向击穿 → 稳压</span></div>
+
+    <div class="rule"></div>
+
+    <div class="lbl">核心 4 问</div>
+    <div class="row"><span class="k star">★</span><span class="txt">r_d 怎么算？与 I_D 关系</span><span class="tagk">3-7</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">何时用 r_d？何时用 0.7</span><span class="tagk">3-7</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">稳压管正接还是反接</span><span class="tagk">3-9、3-10</span></div>
+    <div class="row"><span class="k star">★</span><span class="txt">限流电阻为何必须有</span><span class="tagk">3-8、3-10</span></div>
+
+    <div class="rule"></div>
+
+    <div class="row"><span class="k skip">⊘</span><span class="txt dim">温度系数·噪声·工艺</span><span class="tagk">不考</span></div>
+    <div class="row"><span class="k prod">▣</span><span class="txt">一题内切换两种模型</span></div>
+
+  </div>
+  <div class="warn">★ 这一集最值：题 7 是全书方法论的缩影（直流求 Q → 小信号求变化量）。</div>
+  <div class="ft">
+    <b>4 个 ★ 全答出＝过关。</b>对应 <span class="q">3-7、3-8、3-9、3-10</span>（共 4 题）
+  </div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>康奈尔笔记范例 · 02 PN结的形成</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+    background:#e8e6e0;padding:26px 16px 44px;
+    -webkit-font-smoothing:antialiased;color:#222;
+  }
+  .page{
+    width:840px;margin:0 auto;background:#fffefb;
+    border:1px solid #c9c3b6;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+  }
+  /* header */
+  .head{
+    border-bottom:2px solid #2f3a45;padding:12px 18px 10px;
+    display:flex;justify-content:space-between;align-items:flex-end;
+  }
+  .head h1{font-size:17px;font-weight:700;color:#2f3a45;letter-spacing:.5px;}
+  .head .meta{font-size:10.5px;color:#8b8578;text-align:right;line-height:1.6;}
+  .head .meta b{color:#5f594c;font-weight:600;}
+
+  /* body grid */
+  .grid{display:flex;}
+  .cue{
+    width:212px;flex:0 0 212px;
+    border-right:1.5px solid #2f3a45;
+    padding:14px 12px;background:#faf8f3;
+  }
+  .notes{flex:1;padding:14px 18px 16px;}
+
+  .sec{
+    font-size:9.5px;letter-spacing:1.6px;color:#9a9487;
+    font-weight:700;margin-bottom:8px;text-transform:uppercase;
+  }
+  .cue .item{
+    font-size:11.5px;line-height:1.55;color:#3a3a36;
+    padding:4px 0 5px 0;border-bottom:1px dotted #ddd7c9;
+    display:flex;gap:5px;
+  }
+  .cue .item:last-child{border-bottom:none;}
+  .cue .n{
+    font-size:9.5px;font-weight:700;color:#b4453a;
+    flex:0 0 auto;padding-top:1px;
+  }
+  .cue .hint{font-size:9.5px;color:#a8a294;line-height:1.6;margin-top:10px;padding-top:8px;border-top:1px solid #e2dccf;}
+
+  /* notes content */
+  .blk{margin-bottom:11px;}
+  .blk h3{
+    font-size:12px;font-weight:700;color:#2f3a45;margin-bottom:5px;
+    display:flex;align-items:center;gap:6px;
+  }
+  .blk h3 .tag{
+    font-size:9px;font-weight:700;color:#fff;background:#2f3a45;
+    padding:1px 5px;border-radius:2px;letter-spacing:.5px;
+  }
+  .blk p,.blk li{font-size:11.5px;line-height:1.72;color:#2e2e2a;}
+  .blk ul{padding-left:15px;}
+  .blk li{margin-bottom:1px;}
+  .k{color:#b4453a;font-weight:700;}
+  .b{font-weight:700;color:#1f4e63;}
+  .mono{font-family:"SF Mono",Consolas,monospace;font-size:11px;background:#f2efe7;padding:1px 4px;border-radius:2px;}
+
+  table.chk{width:100%;border-collapse:collapse;margin-top:4px;}
+  table.chk td,table.chk th{
+    font-size:11px;padding:3px 6px;border:1px solid #ddd7c9;line-height:1.5;
+  }
+  table.chk th{background:#f4f1e9;font-weight:700;color:#4a4a44;text-align:left;}
+
+  /* summary */
+  .sum{
+    border-top:1.5px solid #2f3a45;padding:11px 18px 13px;background:#faf8f3;
+  }
+  .sum .sec{margin-bottom:5px;}
+  .sum p{font-size:12px;line-height:1.8;color:#2a2a26;}
+  .sum p b{color:#b4453a;}
+
+  .foot{
+    font-size:9.5px;color:#9a9487;padding:7px 18px;border-top:1px solid #e2dccf;
+    background:#f7f5ee;line-height:1.6;
+  }
+  svg{display:block;margin:2px auto 4px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <h1>02 &nbsp;PN 结的形成</h1>
+    <div class="meta">
+      郑益慧《模拟电子技术基础》<br>
+      <b>康奈尔笔记 · 完整范例</b> ｜ 本课 L1 过关样本
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ============ 左栏 ============ -->
+    <div class="cue">
+      <div class="sec">线索 · 遮住右边自测</div>
+
+      <div class="item"><span class="n">01</span><span>耗尽层耗尽的是？</span></div>
+      <div class="item"><span class="n">02</span><span>E 从哪到哪？为何</span></div>
+      <div class="item"><span class="n">03</span><span>离子为何不能动</span></div>
+      <div class="item"><span class="n">04</span><span>U_D 硅／锗＝？</span></div>
+      <div class="item"><span class="n">05</span><span>平衡＝两电流如何</span></div>
+      <div class="item"><span class="n">06</span><span>正偏 → 层变？</span></div>
+      <div class="item"><span class="n">07</span><span>反偏 → 层变？</span></div>
+      <div class="item"><span class="n">08</span><span>0.7 V 是谁建的</span></div>
+      <div class="item"><span class="n">09</span><span>I_S 随温度？</span></div>
+      <div class="item"><span class="n">10</span><span>P／N 多子各是</span></div>
+
+      <div class="hint">
+        自测法：手指盖住右栏，<br>只看 01–10 逐条答。<br>
+        <b>全答出＝本课过</b>；<br>卡在某条＝回右栏那一条，<br>不要重听整集。
+      </div>
+    </div>
+
+    <!-- ============ 右栏 ============ -->
+    <div class="notes">
+
+      <!-- 图 -->
+      <div class="blk">
+        <h3><span class="tag">图</span>平衡时的空间电荷区</h3>
+        <svg viewBox="0 0 500 178" width="486" height="173">
+          <defs>
+            <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+              <path d="M0,0 L8,3.2 L0,6.4 Z" fill="#b4453a"/>
+            </marker>
+          </defs>
+
+          <!-- 区域 -->
+          <rect x="20" y="26" width="170" height="106" fill="#f8f5ee" stroke="#cfc9bb"/>
+          <rect x="190" y="26" width="110" height="106" fill="#e9eef2" stroke="#a8b6c0"/>
+          <rect x="300" y="26" width="170" height="106" fill="#f8f5ee" stroke="#cfc9bb"/>
+
+          <!-- 顶标 -->
+          <text x="105" y="19" font-size="9.5" fill="#4a4a44" text-anchor="middle">P 区（多子：空穴）</text>
+          <text x="245" y="19" font-size="9.5" fill="#1f4e63" text-anchor="middle" font-weight="700">耗尽层 W</text>
+          <text x="385" y="19" font-size="9.5" fill="#4a4a44" text-anchor="middle">N 区（多子：电子）</text>
+
+          <!-- P区空穴 : 空心圆 + -->
+          <g stroke="#7a8fa0" fill="none" stroke-width="1.2">
+            <circle cx="48" cy="52" r="6"/><circle cx="88" cy="52" r="6"/><circle cx="128" cy="52" r="6"/><circle cx="168" cy="52" r="6"/>
+            <circle cx="48" cy="84" r="6"/><circle cx="88" cy="84" r="6"/><circle cx="128" cy="84" r="6"/><circle cx="168" cy="84" r="6"/>
+            <circle cx="48" cy="114" r="6"/><circle cx="88" cy="114" r="6"/><circle cx="128" cy="114" r="6"/><circle cx="168" cy="114" r="6"/>
+          </g>
+          <g font-size="8" fill="#5b7285" text-anchor="middle">
+            <text x="48" y="55">+</text><text x="88" y="55">+</text><text x="128" y="55">+</text><text x="168" y="55">+</text>
+            <text x="48" y="87">+</text><text x="88" y="87">+</text><text x="128" y="87">+</text><text x="168" y="87">+</text>
+            <text x="48" y="117">+</text><text x="88" y="117">+</text><text x="128" y="117">+</text><text x="168" y="117">+</text>
+          </g>
+
+          <!-- 负离子（P侧，方框） -->
+          <g fill="#dce5ec" stroke="#8a9fb0" stroke-width="1">
+            <rect x="199" y="44" width="13" height="13"/><rect x="219" y="44" width="13" height="13"/>
+            <rect x="199" y="76" width="13" height="13"/><rect x="219" y="76" width="13" height="13"/>
+            <rect x="199" y="108" width="13" height="13"/><rect x="219" y="108" width="13" height="13"/>
+          </g>
+          <g font-size="10" fill="#3d5f78" text-anchor="middle" font-weight="700">
+            <text x="205.5" y="54">−</text><text x="225.5" y="54">−</text>
+            <text x="205.5" y="86">−</text><text x="225.5" y="86">−</text>
+            <text x="205.5" y="118">−</text><text x="225.5" y="118">−</text>
+          </g>
+
+          <!-- 正离子（N侧，方框） -->
+          <g fill="#f2dedb" stroke="#c08d86" stroke-width="1">
+            <rect x="258" y="44" width="13" height="13"/><rect x="278" y="44" width="13" height="13"/>
+            <rect x="258" y="76" width="13" height="13"/><rect x="278" y="76" width="13" height="13"/>
+            <rect x="258" y="108" width="13" height="13"/><rect x="278" y="108" width="13" height="13"/>
+          </g>
+          <g font-size="10" fill="#a04a40" text-anchor="middle" font-weight="700">
+            <text x="264.5" y="54">+</text><text x="284.5" y="54">+</text>
+            <text x="264.5" y="86">+</text><text x="284.5" y="86">+</text>
+            <text x="264.5" y="118">+</text><text x="284.5" y="118">+</text>
+          </g>
+
+          <!-- N区电子 : 实心圆 -->
+          <g fill="#5b7285">
+            <circle cx="328" cy="52" r="4.5"/><circle cx="368" cy="52" r="4.5"/><circle cx="408" cy="52" r="4.5"/><circle cx="448" cy="52" r="4.5"/>
+            <circle cx="328" cy="84" r="4.5"/><circle cx="368" cy="84" r="4.5"/><circle cx="408" cy="84" r="4.5"/><circle cx="448" cy="84" r="4.5"/>
+            <circle cx="328" cy="114" r="4.5"/><circle cx="368" cy="114" r="4.5"/><circle cx="408" cy="114" r="4.5"/><circle cx="448" cy="114" r="4.5"/>
+          </g>
+
+          <!-- 电场箭头 N -> P -->
+          <line x1="292" y1="152" x2="200" y2="152" stroke="#b4453a" stroke-width="1.6" marker-end="url(#ar)"/>
+          <text x="246" y="166" font-size="10" fill="#b4453a" text-anchor="middle" font-weight="700">内建电场 E （N → P）</text>
+
+          <!-- U_D -->
+          <text x="105" y="166" font-size="10" fill="#5f594c" text-anchor="middle">U_D ≈ 0.6~0.7 V（硅）</text>
+
+          <!-- 侧注 -->
+          <text x="385" y="152" font-size="9.5" fill="#7b8a98" text-anchor="middle">少子：空穴</text>
+          <text x="105" y="147" font-size="9.5" fill="#7b8a98" text-anchor="middle">少子：电子</text>
+        </svg>
+      </div>
+
+      <!-- 01 02 -->
+      <div class="blk">
+        <h3><span class="tag">01–02</span>两种半导体 · 接触后发生什么</h3>
+        <table class="chk">
+          <tr><th style="width:52px">类型</th><th>掺杂</th><th>多子</th><th>少子</th></tr>
+          <tr><td>P 型</td><td>三价（硼）</td><td class="b">空穴</td><td>自由电子</td></tr>
+          <tr><td>N 型</td><td>五价（磷）</td><td class="b">自由电子</td><td>空穴</td></tr>
+        </table>
+        <p style="margin-top:5px">⚠️ 两者<b>各自都是电中性的</b>（杂质原子本身中性）。不是"P 带正电、N 带负电互相吸引"。</p>
+        <p style="margin-top:4px">接触瞬间两件事同时发生：<span class="k">扩散</span>（浓度差驱动，电子 N→P、空穴 P→N）+ <span class="k">复合</span>（交界处电子与空穴复合消失）。</p>
+      </div>
+
+      <!-- 03 -->
+      <div class="blk">
+        <h3><span class="tag">03</span>留下的离子构成空间电荷区</h3>
+        <p>载流子跑了，<b>原子跑不了</b>（固定在晶格上）：</p>
+        <ul>
+          <li>N 侧：电子走了 → 剩施主<b>正离子</b></li>
+          <li>P 侧：空穴走了 → 剩受主<b>负离子</b></li>
+        </ul>
+        <p style="margin-top:3px">→ 形成 <span class="k">空间电荷区（耗尽层）</span>。<b>耗尽的是载流子，不是电荷</b>——名字容易误会。</p>
+        <p style="margin-top:3px">电荷分布：N 侧正、P 侧负 → <span class="k">E 从 N 指向 P</span>（正电荷指向负电荷）。</p>
+      </div>
+
+      <!-- 04 05 -->
+      <div class="blk">
+        <h3><span class="tag">04–05</span>平衡：两个电流相等</h3>
+        <p>电场一旦出现就反过来干活，做两件事：</p>
+        <ul>
+          <li><b>挡多子</b>：多子扩散被压制</li>
+          <li><b>拉少子</b>：少子越过结 → 形成反向的<span class="k">漂移电流</span></li>
+        </ul>
+        <p style="margin-top:3px">自我调节到 <span class="mono">扩散电流 = 漂移电流</span>，净电流为零 → <span class="k">动态平衡</span>。</p>
+        <p style="margin-top:3px">⚠️ 平衡 ≠ 没有电流，是<b>两个电流大小相等方向相反互相抵消</b>。</p>
+        <p style="margin-top:3px">此时结上有 <span class="k">U_D</span>：硅 0.6~0.7 V ／ 锗 0.2~0.3 V。</p>
+      </div>
+
+      <!-- 06 07 08 -->
+      <div class="blk">
+        <h3><span class="tag">06–08</span>外加电压＝调节势垒高低</h3>
+        <table class="chk">
+          <tr><th style="width:74px">接法</th><th>外电场 vs E</th><th>耗尽层</th><th>结果</th></tr>
+          <tr>
+            <td><b>正偏</b><br>P接＋ N接−</td>
+            <td>P→N，与 E <b>反向</b> → 削弱</td>
+            <td class="b">变窄</td>
+            <td>势垒降低，扩散占优 → <b>大电流（指数增长）</b></td>
+          </tr>
+          <tr>
+            <td><b>反偏</b><br>P接− N接＋</td>
+            <td>N→P，与 E <b>同向</b> → 增强</td>
+            <td class="b">变宽</td>
+            <td>势垒升高，扩散阻断 → 只剩少子漂移 → <b>极小 I_S</b></td>
+          </tr>
+        </table>
+        <p style="margin-top:5px"><b class="k">08 的答案：0.7 V 是 PN 结自己建立的内建势垒，不是外部加的电压。</b>
+        外加电压只是"降低或抬高"这个势垒。→ 这就是恒压降模型里那块电池所代表的东西。</p>
+      </div>
+
+      <!-- 09 -->
+      <div class="blk">
+        <h3><span class="tag">09</span>反向电流与温度</h3>
+        <p>I_S 由<b>少子数量</b>决定，少子靠热激发产生 → 温度每升 <b>10 ℃ 约翻一倍</b>。与反偏电压大小几乎无关，所以叫"饱和"。</p>
+        <p style="margin-top:3px">这是后面<b>温度漂移</b>（第 5 章 Q 点漂移、第 3 章稳压管温度系数）的根源。</p>
+      </div>
+
+      <!-- 常见误区 -->
+      <div class="blk">
+        <h3><span class="tag">×</span>四个错说法</h3>
+        <ul>
+          <li>"反偏没电流" → 有 I_S，且随温度翻倍</li>
+          <li>"0.7 V 是外加的" → 是内建势垒</li>
+          <li>"耗尽层没电荷" → 有<b>不能移动的离子电荷</b></li>
+          <li>"平衡时电流都停了" → 是两个电流相等</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 总结 -->
+  <div class="sum">
+    <div class="sec">总结 · 一句话（遮住上面自己先说一遍）</div>
+    <p>交界处多子扩散并复合，留下<b>不能移动的正负离子</b>形成空间电荷区与内建电场；电场反过来抑制扩散并驱动少子漂移，两者相等时达到动态平衡，结上建立势垒 U_D。
+    外加电压的全部作用就是<b>调节这个势垒的高低</b>：正偏削弱它、耗尽层变窄、扩散占优而导通；反偏增强它、耗尽层变宽、只剩少子漂移而截止。<b>这就是单向导电性，也是 0.7 V 的由来。</b></p>
+  </div>
+
+  <div class="foot">
+    范例用途：对照格式，不是替代听课。<b>先自己听、自己填一张</b>，再拿这张比，差在哪一目了然。每行字号、颗粒度就是标准——一句话一个环节，不写长句。
+  </div>
+
+</div>
+</body>
+</html>
