@@ -35,8 +35,10 @@
 
 在**本文件夹内**打开终端（Windows：在文件夹里右键 → Git Bash Here；或 `cd` 进来），逐行执行：
 
+> 路径说明：Git Bash 里 `D:\Desktop\learning-coach` 写作 `/d/Desktop/learning-coach`。桌面在哪个盘就换成哪个盘符。
+
 ```bash
-cd ~/Desktop/learning-coach
+cd /d/Desktop/learning-coach          # Git Bash 写法；换成你自己的实际路径
 
 # 确认已在 main 分支
 git branch -M main
@@ -65,7 +67,7 @@ GitHub 从 2021 年起不接受账号密码，要用 **Personal Access Token**�
 装好 `gh` 并 `gh auth login` 之后，第 1、2 步合成一条命令：
 
 ```bash
-cd ~/Desktop/learning-coach
+cd /d/Desktop/learning-coach          # Git Bash 写法；换成你自己的实际路径
 gh repo create learning-coach --public --source=. --remote=origin --push \
   --description "通用学习教练：一套可复制到任意 AI、任意学科的学习流程提示词与技能"
 ```
@@ -77,7 +79,7 @@ gh repo create learning-coach --public --source=. --remote=origin --push \
 ## 第 4 步：后续怎么更新
 
 ```bash
-cd ~/Desktop/learning-coach
+cd /d/Desktop/learning-coach          # Git Bash 写法；换成你自己的实际路径
 git add .
 git commit -m "docs: 补充 XX 案例"
 git push
