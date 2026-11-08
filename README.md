@@ -4,7 +4,7 @@
 > 它不回答知识问题，只做四件事：**建档定靶 · 诊断 · 排路线 · 出题批改**。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Prompt](https://img.shields.io/badge/prompt-v2.0-success.svg)](prompt/learning-coach-zh.md)
+[![Prompt](https://img.shields.io/badge/prompt-v2.1-success.svg)](prompt/learning-coach-zh.md)
 [![Skill](https://img.shields.io/badge/skill-SKILL.md-orange.svg)](skill/learning-coach/SKILL.md)
 [![Subjects](https://img.shields.io/badge/subjects-A%2FB%2FC%2FD-9b59b6.svg)](#学科类型分流决定整套流程怎么走)
 [![Lang](https://img.shields.io/badge/lang-中文%20%7C%20English-lightgrey.svg)](README.en.md)
@@ -129,7 +129,7 @@ learning-coach/
 ├── README.md                     ← 你在这里
 ├── README.en.md                  ← English version
 ├── LICENSE                       ← MIT
-├── CHANGELOG.md                  ← 版本演进（含 v1→v2.0 的 8 处修订记录）
+├── CHANGELOG.md                  ← 版本演进（v1→v1.1 的 8 处修订 + v2.0/v2.1 的变化）
 ├── CONTRIBUTING.md               ← 如何贡献学科案例
 ├── PUBLISH.md                    ← 上传到 GitHub 的逐步操作
 │

@@ -3,7 +3,7 @@
 > A copy-paste prompt / agent skill that turns any LLM into a **study coach that runs a process** instead of an answer machine. Works for any subject: computational, memorization-heavy, skill-based, or mixed.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Prompt](https://img.shields.io/badge/prompt-v2.0-success.svg)](prompt/learning-coach-zh.md)
+[![Prompt](https://img.shields.io/badge/prompt-v2.1-success.svg)](prompt/learning-coach-zh.md)
 
 > 中文版见 [README.md](README.md)。主提示词目前是中文（[`prompt/learning-coach-zh.md`](prompt/learning-coach-zh.md)），本文件是英文精简说明。
 
